@@ -51,40 +51,34 @@ def inverted(img):
 	return img
 
 def blur(img):
-	# Apply Gaussian Blur
-	img_blur = cv.GaussianBlur(img, (15, 15), 0)  # You can adjust the kernel size for more or less blur
+	img_blur = cv.GaussianBlur(img, (15, 15), 0)
 	return img_blur
 
 def edge_detection(img):
-	# Convert to grayscale before applying edge detection
 	gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-	# Apply Canny edge detection
 	edges = cv.Canny(gray, 100, 200)
-	# Convert back to BGR to maintain 3 channels
+	
 	edges_bgr = cv.cvtColor(edges, cv.COLOR_GRAY2BGRA)
 	return edges_bgr
 
 def emboss(img):
-	# Define the emboss kernel
 	emboss_kernel = np.array([[-2, -1, 0], 
 							  [-1, 1, 1], 
 							  [0, 1, 2]])
-	# Apply convolution with the emboss kernel
+	
 	img_emboss = cv.filter2D(img, -1, emboss_kernel)
 	return img_emboss
 
 def increase_brightness(img, value=50):
-	# Increase the brightness by adding a constant value to all pixels
 	img_bright = cv.convertScaleAbs(img, alpha=1, beta=value)
 	return img_bright
 
 def increase_contrast(img, alpha=2.0):
-	# Increase the contrast by scaling pixel values
 	img_contrast = cv.convertScaleAbs(img, alpha=alpha, beta=0)
 	return img_contrast
 
 def blue_tint(img):
-	# Increase the blue channel and decrease the red and green channels
+	# Aumenta o canal azul e diminui os outros
 	img_blue_tint = img.copy()
 	img_blue_tint[:, :, 0] = cv.add(img_blue_tint[:, :, 0], 50)  # Blue channel
 	img_blue_tint[:, :, 1] = cv.subtract(img_blue_tint[:, :, 1], 50)  # Green channel
@@ -92,7 +86,7 @@ def blue_tint(img):
 	return img_blue_tint
 
 def red_tint(img):
-	# Increase the red channel and decrease the green and blue channels
+	# Aumenta o canal vermelho e diminui os outros
 	img_red_tint = img.copy()
 	img_red_tint[:, :, 0] = cv.subtract(img_red_tint[:, :, 0], 50)  # Blue channel
 	img_red_tint[:, :, 1] = cv.subtract(img_red_tint[:, :, 1], 50)  # Green channel

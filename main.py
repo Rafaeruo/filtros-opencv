@@ -40,7 +40,7 @@ btn_salvar.grid(row=0, column=1, padx=5)
 btn_iniciar = tk.Button(button_frame, text="Start Camera", command=lambda: on_start_camera_callback(state, window), width=20)
 btn_iniciar.grid(row=0, column=2, padx=5)
 
-btn_parar = tk.Button(button_frame, text="Stop Camera", command=on_stop_camera_callback, width=20)
+btn_parar = tk.Button(button_frame, text="Stop Camera", command=lambda: on_stop_camera_callback(state), width=20)
 btn_parar.grid(row=0, column=3, padx=5)
 
 filtros_frame = tk.Frame(main_frame)

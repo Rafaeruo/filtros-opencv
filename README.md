@@ -11,3 +11,11 @@ A aplicação foi construída com Python, OpenCV e Tkinter.
 Primeiramente, é necessário instalar as dependências: `pip install -r requirements.txt`.
 
 Para executar: `python main.py`.
+
+# Créditos e vídeo apresentação
+
+Bruno Hoffmeister Groehs, Rafael Scholz Griebler e Théo Rossetto
+
+https://youtu.be/_pRezPq0Qf4
+
+![Screenshot](screenshot.png)

@@ -12,10 +12,8 @@ Primeiramente, é necessário instalar as dependências: `pip install -r require
 
 Para executar: `python main.py`.
 
-# Créditos e vídeo apresentação
+# Autores
 
 Bruno Hoffmeister Groehs, Rafael Scholz Griebler e Théo Rossetto
-
-https://youtu.be/_pRezPq0Qf4
 
 ![Screenshot](screenshot.png)
